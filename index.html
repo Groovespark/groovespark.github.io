@@ -1,20 +1,24 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Groovespark</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<form name="gs-playlistfetch" action="">
+  <input type="text" placeholder="Username e.g. KeizerDev" class="gs-username">
+  <input type="submit" value="Submit" id="gs-playsearch">
+</form>
 
-<div class="home">
+<form name="gs-musicsearch" action="">
+  <input type="text" placeholder="Song" class="gs-searchquery">
+  <input type="submit" value="Submit" id="gs-search">
+</form>
+<ul class="gs-playlist"></ul>
+<ul class="gs-songs"></ul>
 
-  <h1>Posts</h1>
-
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+</body>
+</html>
