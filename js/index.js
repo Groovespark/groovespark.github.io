@@ -1,6 +1,9 @@
 jsonpproxy = 'http://jsonpify.herokuapp.com?resource=';
 
+
 $(function() {
+  var player = document.getElementById("audio");
+
   // get playlist
   $("#gs-playsearch").click(function(e) {
     gsplaylist = 'https://raw.githubusercontent.com/'+encodeURI($('.gs-username').val())+'/gs-playlists/master/';
@@ -63,7 +66,6 @@ $(function() {
   // Music player
   $("body").on('click', '.gs-playsong', function(event) {
     var hash = window.location.hash.substring(1);
-    var player = document.getElementById("audio");
     player.src = "http://pleer.com/browser-extension/files/" + hash+ ".mp3";
     player.play();
   });
@@ -78,4 +80,12 @@ $(function() {
     }
   });
 
+
+  player.addEventListener('playing',function() {
+    document.title = "‣ Groovespark";
+  }); 
+
+  player.addEventListener('pause',function() {
+    document.title = "װ Groovespark";
+  });
 });
