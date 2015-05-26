@@ -20,8 +20,8 @@ If you're done with that create a `linktootherplaylist.json` and initialize it w
 }
 ```
 This is an example of some copy and paste stuff from the music api.
-Later I'll automate this by letting GS generating a playlist .json so you can copy and paste that.
+Later I'll automate this by letting GS generating a `nameplayist.json` file so you can just copy and paste that.
 
 **Disclaimer:**  
-I'm not responsible for anything GS does. 
-I just fetch data from 3th parties.
+We are not responsible for anything GS does.  
+GS just fetch data from 3th parties.
