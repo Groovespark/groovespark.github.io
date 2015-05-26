@@ -1,0 +1,4 @@
+- Playlists saved on github.
+- Github username in localstorage
+- Queue support
+- better music player
