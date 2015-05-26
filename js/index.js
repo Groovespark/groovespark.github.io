@@ -1,4 +1,4 @@
-jsonpproxy = 'http://jsonpify.herokuapp.com?resource=';
+jsonpproxy = 'http://jsonp.afeld.me/?url=';
 
 
 $(function() {
