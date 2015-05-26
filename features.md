@@ -2,3 +2,4 @@
 - Github username in localstorage
 - Queue support
 - better music player
+- Minimal but beautiful UI
