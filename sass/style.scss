@@ -1,16 +1,14 @@
-// body {
-// 	background-color: red;
-// 	form {
-// 		margin:0;
-// 		padding:0;
-// 		input {
-// 			background: red;
-// 		}
-// 	}
-// 	input {
-// 		background: blue;
-// 		&.classname {
-// 			background: pink;
-// 		}
-// 	}
-// }
+body {
+  .l-left {
+    width: 30%;
+    float: left;
+  }
+
+  .l-right {
+    width: 70%;
+    float: right;
+  }
+  .ex-playlist {
+    display: none;
+  }
+}

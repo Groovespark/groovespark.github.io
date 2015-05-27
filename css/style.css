@@ -1,0 +1,14 @@
+/* line 2, ../sass/style.scss */
+body .l-left {
+  width: 30%;
+  float: left;
+}
+/* line 7, ../sass/style.scss */
+body .l-right {
+  width: 70%;
+  float: right;
+}
+/* line 11, ../sass/style.scss */
+body .ex-playlist {
+  display: none;
+}

@@ -5,47 +5,44 @@
   <meta charset="utf-8"/>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Groovespark/Groofr/master/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
-  <style type="text/css">
-    .ex-playlist {
-      display: none;
-    }
-  </style>
 </head>
-<body style="margin:0;">
-<table style="width:100%">
-  <tr>
-    <td style="width:30%">
+<body>
+  <header>
+    <div class="l-left">
       <b>Playlists</b>
       <form name="gs-playlistfetch" action="">
         <input type="text" placeholder="Username e.g. KeizerDev" class="gs-username">
         <input type="submit" value="Submit" class="btn" id="gs-playsearch">
       </form>
-    </td>
-    <td>
+    </div>
+    <div class="l-right">
       <b>Songs</b>
       <form name="gs-musicsearch" action="">
         <input type="text" placeholder="Song" class="gs-searchquery">
         <input type="submit" value="Submit" class="btn" id="gs-search">
       </form> 
-    </td>
-  </tr>
-  <tr style="vertical-align: sub;">
-    <td>
+    </div>
+  </header>
+  <div class="l-content">
+    <div class="l-left">
       <ul class="gs-playlists">
         <li>No playlists yet</li>
       </ul>
-    </td>
-    <td>
+    </div>
+    <div class="l-right">
       <ul class="gs-songs">
         <li>No songs yet</li>
       </ul>
-    </td>
-  </tr>
-</table> 
- <audio style="position:absolute; width:100vw; bottom: 0;" id="audio" controls>
-  Your browser does not support the audio element.
-</audio> 
+    </div>
+  </div>
+  <footer style="position:absolute; width:100vw; bottom: 0;">
+    <img src="http://placehold.it/10x10">
+    <audio id="audio" controls>
+      Your browser does not support the audio element.
+    </audio> 
+  </footer>
 </body>
 </html>
