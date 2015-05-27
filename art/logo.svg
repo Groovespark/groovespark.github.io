@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="-130.13935"
-     inkscape:cy="-137.79437"
+     inkscape:zoom="0.7"
+     inkscape:cx="-186.40214"
+     inkscape:cy="393.40129"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -70,10 +70,10 @@
        inkscape:export-ydpi="90"
        inkscape:export-filename="/home/robert-jan/Documents/Groovespark/groovespark-site/art/logo.png" />
     <path
-       style="fill:none;stroke:#ffffff;stroke-width:25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 202.84669,645.50164 c 0,0 73.93299,-45.38387 94.93575,-84.4431 33.6285,-62.53957 -3.99972,-157.76943 -3.99972,-157.76943 93.88599,5 162.8648,242.21253 247.46508,242.21253"
-       id="path3763"
+       style="fill:none;stroke:#ffffff;stroke-width:9.78318501;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 557.96575,639.8662 C 536.01532,630.60666 517.7187,611.76722 504.08163,592.70496 488.42741,570.82808 472.40147,549.35331 454.85604,528.967 438.36619,509.81098 420.78322,491.43275 401.73396,474.85212 382.7251,458.28697 362.07971,442.53005 339.29475,431.58167 c -15.28401,-7.3653 -31.02592,-12.90397 -47.31828,-17.57486 -1.37838,-0.38709 -4.54265,-1.74424 -6.6445,-1.45486 -0.70568,0.0364 -1.31808,0.43546 -1.68129,0.99656 -0.90908,1.40005 -0.0732,4.02371 0,5.58472 0.39345,3.36547 0.80339,6.71941 1.22285,10.08112 4.86596,40.41217 6.73725,83.05609 -5.81021,122.29527 -6.74045,21.14942 -19.02516,40.5093 -35.39272,55.49035 -13.57167,12.40044 -32.95441,24.97327 -52.20194,24.07135 -1.77192,-0.0269 -3.57225,-0.28839 -5.35076,-0.61112"
+       id="path22"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cscc" />
+       sodipodi:nodetypes="ccccccsccccccc" />
   </g>
 </svg>
