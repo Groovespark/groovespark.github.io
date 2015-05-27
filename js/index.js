@@ -17,11 +17,8 @@ $(function() {
         var playlists = $('.gs-playlists');
         playlists.html('');
         
-        var playlistjson;
-        json = JSON.parse(data);
-        
-        $.each(json['playlists'], function(index, val) {
-          jsonplaylists = json['playlists'][index];
+        $.each(data['playlists'], function(index, val) {
+          jsonplaylists = data['playlists'][index];
         
           
           playlists.append('<li>'
@@ -31,9 +28,8 @@ $(function() {
             url: jsonpproxy + gsplaylist + jsonplaylists['pathname'],  
             dataType: 'jsonp',                                                                          
             success: function(dataPlay){
-              playlistjson = JSON.parse(dataPlay);
-              $.each(playlistjson['songs'], function(index, val) {
-                song = playlistjson['songs'][index];
+              $.each(dataPlay['songs'], function(index, val) {
+                song = dataPlay['songs'][index];
                 $('<li><a class="gs-playsong" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>').appendTo('.gs-playlistall', this);
               });
             }
