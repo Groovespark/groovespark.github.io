@@ -9,7 +9,7 @@ Next, create a file `index.json` which contains:
 }
 ```
 
-If you are done with that create `NAME.json` to hold your playlist data, e.g.: 
+If you are done with that create `NAME.json` to hold your playlist data, for example: 
 ```
 {
     "songs":[
