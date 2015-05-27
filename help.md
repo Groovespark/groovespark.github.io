@@ -1,27 +1,28 @@
-**Playlists:**  
-First you have create a new repo on your github account called `gs-playlists`.
-Than initialize it with a `index.json` containing: 
+####Playlists
+First off, create a new repository on your Github account called `gs-playlists`.
+Next, create a file `index.json` which contains: 
 ```
 {
     "playlists":[
-        {"pathname":"linktootherplaylist.json"}
+        {"pathname":"NAME.json"}
     ]
 }
 ```
 
-If you're done with that create a `linktootherplaylist.json` and initialize it with:
+If you are done with that create `NAME.json` to hold your playlist data, e.g.: 
 ```
 {
     "songs":[
-        {"id": "545026i1uP", "artist": "Atomic Kitten", "track": "Eternal Flame", "length": 193},
         {"id": "545026i1uP", "artist": "Atomic Kitten", "track": "Eternal Flame", "length": 193},
         {"id": "132500wAWN", "artist": "Pink Floyd", "track": "Another Brick In The Wall", "length": 343}
     ]
 }
 ```
-This is an example of some copy and paste stuff from the music api.
-Later I'll automate this by letting GS generating a `nameplayist.json` file so you can just copy and paste that.
+This example contains manually copy & pasted data from the music api.
+Later we will automate this by letting GrooveSpark generate a `NAME.json` file with your playlist data in it so you can just copy and paste it.
 
-**Disclaimer:**  
-We are not responsible for anything GS does.  
-GS just fetch data from 3th parties.
+To add another playlist you just have to add the pathname to `index.json`, create the file and fill it with your data.
+
+####Disclaimer 
+We are not responsible for anything GrooveSpark does.  
+GrooveSpark just fetches data from 3rd parties.
