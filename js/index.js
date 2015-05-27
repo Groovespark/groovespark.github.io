@@ -3,6 +3,7 @@ jsonpproxy = 'http://jsonp.afeld.me/?url=';
 
 $(function() {
   var player = document.getElementById("audio");
+  var playercover = $(".l-cover");
 
   // get playlist
   $("#gs-playsearch").click(function(e) {
@@ -48,15 +49,15 @@ $(function() {
   $("#gs-search").click(function(e) {
     gssearch = 'http://pleer.com/browser-extension/search?q='+$('.gs-searchquery').val();
 
-    $.ajax({                                                                                      
+    $.ajax({
       url: jsonpproxy + gssearch,  
-      dataType: 'jsonp',                                                                          
+      dataType: 'jsonp',
       success: function(data){
         $('.gs-songs').html('');
         console.log(data);
         $.each(data['tracks'], function(index, val) {
           song = data['tracks'][index];
-          $('.gs-songs').append('<li><a class="gs-playsong" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
+          $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
         });
       }
     });
@@ -65,9 +66,12 @@ $(function() {
 
   // Music player
   $("body").on('click', '.gs-playsong', function(event) {
-    var hash = window.location.hash.substring(1);
-    player.src = "http://pleer.com/browser-extension/files/" + hash+ ".mp3";
+    hash = $(this).data('songid');
+    song = $(this).data('songname');
+    artist = $(this).data('artistname');
+    player.src = "http://pleer.com/browser-extension/files/" + hash + ".mp3";
     player.play();
+    getArtwork(artist + ' ' + song);
   });
 
   // Playlist expand
@@ -88,4 +92,21 @@ $(function() {
   player.addEventListener('pause',function() {
     document.title = "װ Groovespark";
   });
+
+  function getArtwork(searchkey) {
+    $.ajax({
+      url: 'https://itunes.apple.com/search?media=music&limit=1&term=' + searchkey,  
+      dataType: 'jsonp',
+      success: function(data){
+        console.log(data);
+        if (data['resultCount'] != 0) {
+          playercover.attr('src', data['results'][0]['artworkUrl100']);
+        } else {
+          playercover.attr('src', 'http://placehold.it/100x100');
+        }
+
+      }
+    });
+  }
 });
+
