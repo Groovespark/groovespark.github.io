@@ -18,8 +18,8 @@ If you are done with that create `NAME.json` to hold your playlist data, for exa
     ]
 }
 ```
-This example contains manually copy & pasted data from the music api.
-Later we will automate this by letting GrooveSpark generate a `NAME.json` file with your playlist data in it so you can just copy and paste it.
+This example contains manually copied and pasted data from the music api.
+Later we will automate this by letting GrooveSpark generate a `NAME.json` file with your playlist data in it so you only have to add that.
 
 To add another playlist you just have to add the pathname to `index.json`, create the file and fill it with your data.
 
