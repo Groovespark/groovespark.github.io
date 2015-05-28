@@ -1,14 +1,43 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "variables.scss";
+
+$height-header: 10vh;
+$height-content: 80vh;
+$height-footer: 10vh;
+
 body {
-  .l-left {
-    width: 30%;
-    float: left;
+  header {
+    height: $height-header;
+  }
+  
+  .l-content {
+    height: $height-content;
   }
 
-  .l-right {
-    width: 70%;
-    float: right;
+  header, .l-content, footer {
+    @include outer-container;
+    .l-aside { @include span-columns(4); }
+    .l-bside { @include span-columns(8); }
   }
+
+  footer {
+    height: $height-footer;
+    .img-cover {
+      height: $height-footer;
+      width: $height-footer;
+      background-size: cover;
+      margin: 0 auto;
+    }
+  }
+
+  .l-container, .l-content {
+    margin: 0 auto;
+    width: 100%;
+  }
+
   .ex-playlist {
     display: none;
   }
+
 }

@@ -3,7 +3,7 @@ jsonpproxy = 'http://jsonp.afeld.me/?url=';
 
 $(function() {
   var player = document.getElementById("audio");
-  var playercover = $(".l-cover");
+  var playercover = $(".img-cover");
 
   // get playlist
   $("#gs-playsearch").click(function(e) {
@@ -96,9 +96,9 @@ $(function() {
       success: function(data){
         console.log(data);
         if (data['resultCount'] != 0) {
-          playercover.attr('src', data['results'][0]['artworkUrl100']);
+          playercover.css('background-image', 'url(' + data['results'][0]['artworkUrl100'] + ')');
         } else {
-          playercover.attr('src', 'http://placehold.it/100x100');
+          playercover.css('background-image', 'url(http://placehold.it/100x100)');
         }
 
       }
