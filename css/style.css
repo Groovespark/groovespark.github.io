@@ -101,13 +101,37 @@ body footer .l-aside .l-playercontrols:last-child {
 body footer .l-aside .l-playercontrols li {
   display: inline;
   font-size: 35px;
+  line-height: 10vh;
 }
-/* line 52, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
+body footer .l-bside {
+  height: 10vh;
+}
+/* line 53, ../sass/style.scss */
+body footer .l-bside .l-playerprogress {
+  margin-top: calc(5vh - 5px);
+  margin-bottom: calc(5vh - 5px);
+}
+/* line 56, ../sass/style.scss */
+body footer .l-bside .l-playerprogress .progress-outer {
+  margin-top: 50%;
+  width: 80%;
+  height: 10px;
+  margin: 0 auto;
+  background-color: #999;
+}
+/* line 62, ../sass/style.scss */
+body footer .l-bside .l-playerprogress .progress-outer .progress-inner {
+  height: 10px;
+  background-color: #4D4D4D;
+  width: 10%;
+}
+/* line 72, ../sass/style.scss */
 body .l-container, body .l-content {
   margin: 0 auto;
   width: 100%;
 }
-/* line 57, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 body .ex-playlist {
   display: none;
 }

@@ -2,7 +2,7 @@ jsonpproxy = 'http://jsonp.afeld.me/?url=';
 
 
 $(function() {
-  var player = document.getElementById("audio");
+  var player = document.createElement("audio");
   var playercover = $(".img-cover");
   var playing = false;
 
@@ -107,6 +107,12 @@ $(function() {
     document.title = "װ Groovespark";
     $(".player-play").html("▮▮");
     playing = false;
+    player.currentTime;
+    $(".progress-inner").css('width', player.currentTime / player.duration * 100 + '%');
+  });
+
+  player.addEventListener('timeupdate',function() {
+    $(".progress-inner").css('width', player.currentTime / player.duration * 100 + '%');
   });
 
   $('.l-playercontrols').on('click', '.player-play', function(event) {
