@@ -23,11 +23,29 @@ body {
 
   footer {
     height: $height-footer;
-    .img-cover {
-      height: $height-footer;
-      width: $height-footer;
-      background-size: cover;
-      margin: 0 auto;
+    .l-aside {
+      @include outer-container;
+
+      .l-cover {
+        @include span-columns(6);
+        .img-cover {
+          height: $height-footer;
+          width: $height-footer;
+          background-size: cover;
+          margin: 0 auto;
+        }
+      }
+
+      .l-playercontrols {
+        @include span-columns(6);
+        text-align: center;
+        display: inline-block;
+
+        li {
+          display: inline;
+          font-size: 35px;
+        }
+      }
     }
   }
 

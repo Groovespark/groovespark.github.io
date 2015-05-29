@@ -55,18 +55,59 @@ body footer {
   height: 10vh;
 }
 /* line 26, ../sass/style.scss */
-body footer .img-cover {
+body footer .l-aside {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, ../sass/bourbon/addons/_clearfix.scss */
+body footer .l-aside::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 29, ../sass/style.scss */
+body footer .l-aside .l-cover {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+/* line 89, ../sass/neat/grid/_span-columns.scss */
+body footer .l-aside .l-cover:last-child {
+  margin-right: 0;
+}
+/* line 31, ../sass/style.scss */
+body footer .l-aside .l-cover .img-cover {
   height: 10vh;
   width: 10vh;
   background-size: cover;
   margin: 0 auto;
 }
-/* line 34, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
+body footer .l-aside .l-playercontrols {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  text-align: center;
+  display: inline-block;
+}
+/* line 89, ../sass/neat/grid/_span-columns.scss */
+body footer .l-aside .l-playercontrols:last-child {
+  margin-right: 0;
+}
+/* line 44, ../sass/style.scss */
+body footer .l-aside .l-playercontrols li {
+  display: inline;
+  font-size: 35px;
+}
+/* line 52, ../sass/style.scss */
 body .l-container, body .l-content {
   margin: 0 auto;
   width: 100%;
 }
-/* line 39, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 body .ex-playlist {
   display: none;
 }

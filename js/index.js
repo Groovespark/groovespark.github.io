@@ -4,6 +4,7 @@ jsonpproxy = 'http://jsonp.afeld.me/?url=';
 $(function() {
   var player = document.getElementById("audio");
   var playercover = $(".img-cover");
+  var playing = false;
 
   // get playlist
   $("#gs-playsearch").click(function(e) {
@@ -53,7 +54,7 @@ $(function() {
         console.log(data);
         $.each(data['tracks'], function(index, val) {
           song = data['tracks'][index];
-          $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
+          $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
         });
       }
     });
@@ -80,15 +81,6 @@ $(function() {
     }
   });
 
-
-  player.addEventListener('playing',function() {
-    document.title = "‣ Groovespark";
-  }); 
-
-  player.addEventListener('pause',function() {
-    document.title = "װ Groovespark";
-  });
-
   function getArtwork(searchkey) {
     $.ajax({
       url: 'https://itunes.apple.com/search?media=music&limit=1&term=' + searchkey,  
@@ -104,5 +96,25 @@ $(function() {
       }
     });
   }
-});
 
+  player.addEventListener('playing',function() {
+    document.title = "▶ Groovespark";
+    $(".player-play").html("‣");
+    playing = true;
+  }); 
+
+  player.addEventListener('pause',function() {
+    document.title = "װ Groovespark";
+    $(".player-play").html("▮▮");
+    playing = false;
+  });
+
+  $('.l-playercontrols').on('click', '.player-play', function(event) {
+    console.log(playing);
+    if (playing) {
+      player.pause();
+    } else {
+      player.play();
+    }
+  });
+});
