@@ -99,13 +99,13 @@ $(function() {
 
   player.addEventListener('playing',function() {
     document.title = "▶ Groovespark";
-    $(".player-play").html("‣");
+    $(".player-play").html("▮▮");
     playing = true;
   }); 
 
   player.addEventListener('pause',function() {
     document.title = "װ Groovespark";
-    $(".player-play").html("▮▮");
+    $(".player-play").html("‣");
     playing = false;
     player.currentTime;
     $(".progress-inner").css('width', player.currentTime / player.duration * 100 + '%');
