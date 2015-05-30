@@ -124,7 +124,7 @@ body footer .l-bside .l-playerprogress .progress-outer {
 body footer .l-bside .l-playerprogress .progress-outer .progress-inner {
   height: 10px;
   background-color: #4D4D4D;
-  width: 10%;
+  width: 0%;
 }
 /* line 72, ../sass/style.scss */
 body .l-container, body .l-content {
