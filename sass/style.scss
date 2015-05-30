@@ -2,13 +2,12 @@
 @import "neat/neat";
 @import "variables.scss";
 
-$height-header: 10vh;
 $height-content: 80vh;
 $height-footer: 10vh;
 
 body {
   header {
-    height: $height-header;
+
   }
   
   .l-content {
