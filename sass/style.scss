@@ -50,9 +50,17 @@ body {
     }
     .l-bside {
       height: $height-footer;
+      position: relative;
+      .gs-currentsong {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+      }
+
       .l-playerprogress {
         margin-top: calc(5vh - 5px);
         margin-bottom: calc(5vh - 5px);
+      
         .progress-outer {
           margin-top: 50%;
           width: 80%;

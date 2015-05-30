@@ -69,6 +69,7 @@ $(function() {
     player.src = "http://pleer.com/browser-extension/files/" + hash + ".mp3";
     player.play();
     getArtwork(artist + ' ' + song);
+    $('.gs-currentsong').html(song + ' - ' + artist);
   });
 
   // Playlist expand
@@ -92,7 +93,6 @@ $(function() {
         } else {
           playercover.css('background-image', 'url(http://placehold.it/100x100)');
         }
-
       }
     });
   }

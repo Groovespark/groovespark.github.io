@@ -109,13 +109,20 @@ body footer .l-aside .l-playercontrols li {
 /* line 51, ../sass/style.scss */
 body footer .l-bside {
   height: 10vh;
+  position: relative;
 }
-/* line 53, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
+body footer .l-bside .gs-currentsong {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+/* line 60, ../sass/style.scss */
 body footer .l-bside .l-playerprogress {
   margin-top: calc(5vh - 5px);
   margin-bottom: calc(5vh - 5px);
 }
-/* line 56, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 body footer .l-bside .l-playerprogress .progress-outer {
   margin-top: 50%;
   width: 80%;
@@ -123,18 +130,18 @@ body footer .l-bside .l-playerprogress .progress-outer {
   margin: 0 auto;
   background-color: #777;
 }
-/* line 62, ../sass/style.scss */
+/* line 70, ../sass/style.scss */
 body footer .l-bside .l-playerprogress .progress-outer .progress-inner {
   height: 10px;
   background-color: #303030;
   width: 0%;
 }
-/* line 72, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 body .l-container, body .l-content {
   margin: 0 auto;
   width: 100%;
 }
-/* line 77, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 body .ex-playlist {
   display: none;
 }
