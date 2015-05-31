@@ -29,7 +29,8 @@ $(function() {
             success: function(dataPlay){
               $.each(dataPlay['songs'], function(j) {
                 song = dataPlay['songs'][j];
-                $('.gs-playlistall', i).append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
+
+                $('.gs-playlistall').eq(i).append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
                 // $(this).html('<li><a class="gs-playsong" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
               });
             }
