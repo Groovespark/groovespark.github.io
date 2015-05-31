@@ -11,15 +11,28 @@ html {
 /* Black */
 /* Gray */
 /* White */
+/* Code for Firefox */
 /* line 10, ../sass/style.scss */
+::-moz-selection {
+  color: #f0f0f0;
+  background: #ff9800;
+}
+
+/* line 15, ../sass/style.scss */
+::selection {
+  color: #f0f0f0;
+  background: #ff9800;
+}
+
+/* line 21, ../sass/style.scss */
 body header {
   height: 10vh;
 }
-/* line 14, ../sass/style.scss */
+/* line 25, ../sass/style.scss */
 body .l-content {
   height: 80vh;
 }
-/* line 18, ../sass/style.scss */
+/* line 29, ../sass/style.scss */
 body header, body .l-content, body footer {
   max-width: 68em;
   margin-left: auto;
@@ -31,7 +44,7 @@ body header::after, body .l-content::after, body footer::after {
   content: "";
   display: table;
 }
-/* line 20, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 body header .l-aside, body .l-content .l-aside, body footer .l-aside {
   float: left;
   display: block;
@@ -42,7 +55,7 @@ body header .l-aside, body .l-content .l-aside, body footer .l-aside {
 body header .l-aside:last-child, body .l-content .l-aside:last-child, body footer .l-aside:last-child {
   margin-right: 0;
 }
-/* line 21, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 body header .l-bside, body .l-content .l-bside, body footer .l-bside {
   float: left;
   display: block;
@@ -53,11 +66,11 @@ body header .l-bside, body .l-content .l-bside, body footer .l-bside {
 body header .l-bside:last-child, body .l-content .l-bside:last-child, body footer .l-bside:last-child {
   margin-right: 0;
 }
-/* line 24, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 body footer {
   height: 10vh;
 }
-/* line 26, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 body footer .l-aside {
   max-width: 68em;
   margin-left: auto;
@@ -69,7 +82,7 @@ body footer .l-aside::after {
   content: "";
   display: table;
 }
-/* line 29, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 body footer .l-aside .l-cover {
   float: left;
   display: block;
@@ -80,14 +93,14 @@ body footer .l-aside .l-cover {
 body footer .l-aside .l-cover:last-child {
   margin-right: 0;
 }
-/* line 31, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 body footer .l-aside .l-cover .img-cover {
   height: 10vh;
   width: 10vh;
   background-size: cover;
   margin: 0 auto;
 }
-/* line 39, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 body footer .l-aside .l-playercontrols {
   float: left;
   display: block;
@@ -100,29 +113,29 @@ body footer .l-aside .l-playercontrols {
 body footer .l-aside .l-playercontrols:last-child {
   margin-right: 0;
 }
-/* line 44, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 body footer .l-aside .l-playercontrols li {
   display: inline;
   font-size: 35px;
   line-height: 10vh;
 }
-/* line 51, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 body footer .l-bside {
   height: 10vh;
   position: relative;
 }
-/* line 54, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 body footer .l-bside .gs-currentsong {
   position: absolute;
   text-align: center;
   width: 100%;
 }
-/* line 60, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 body footer .l-bside .l-playerprogress {
   margin-top: calc(5vh - 5px);
   margin-bottom: calc(5vh - 5px);
 }
-/* line 64, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 body footer .l-bside .l-playerprogress .progress-outer {
   margin-top: 50%;
   width: 80%;
@@ -130,18 +143,18 @@ body footer .l-bside .l-playerprogress .progress-outer {
   margin: 0 auto;
   background-color: #777;
 }
-/* line 70, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 body footer .l-bside .l-playerprogress .progress-outer .progress-inner {
   height: 10px;
   background-color: #303030;
   width: 0%;
 }
-/* line 80, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 body .l-container, body .l-content {
   margin: 0 auto;
   width: 100%;
 }
-/* line 85, ../sass/style.scss */
+/* line 96, ../sass/style.scss */
 body .ex-playlist {
   display: none;
 }

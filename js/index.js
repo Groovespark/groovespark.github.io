@@ -4,34 +4,32 @@ jsonpproxy = 'http://jsonp.afeld.me/?url=';
 $(function() {
   var player = document.createElement("audio");
   var playercover = $(".img-cover");
+  var playlists = $('.gs-playlists');
   var playing = false;
 
   // get playlist
   $("#gs-playsearch").click(function(e) {
     gsplaylist = 'https://raw.githubusercontent.com/'+encodeURI($('.gs-username').val())+'/gs-playlists/master/';
     gsplaylistindex = gsplaylist + 'index.json';
+    playlists.html('');
 
-    $.ajax({                                                                                      
+    $.ajax({
       url: jsonpproxy + gsplaylistindex,  
       dataType: 'jsonp',                                                                          
-      success: function(data){
-        var playlists = $('.gs-playlists');
-        playlists.html('');
-        
-        $.each(data['playlists'], function(index, val) {
-          jsonplaylists = data['playlists'][index];
-        
-          
-          playlists.append('<li>'
-            + '<a href="#'+ jsonplaylists['pathname'].replace('.json', '') +'">'+ jsonplaylists['pathname'].replace('.json', '') + '</a>'
-            + '<ul class="gs-playlistall">');
-          $.ajax({                                                                                      
-            url: jsonpproxy + gsplaylist + jsonplaylists['pathname'],  
-            dataType: 'jsonp',                                                                          
+      success: function(data){      
+        $.each(data['playlists'], function(i, v) {
+          jsonplaylists = data['playlists'][i];
+          playlistname = jsonplaylists['pathname'].replace('.json', '');
+          playlists.append('<li><a href="#'+ playlistname +'">'+ playlistname + '</a><ul class="gs-playlistall">');
+          console.log(jsonpproxy + gsplaylist + decodeURI(jsonplaylists['pathname']));
+          $.ajax({
+            url: jsonpproxy + gsplaylist + decodeURI(jsonplaylists['pathname']),
+            dataType: 'jsonp',
             success: function(dataPlay){
-              $.each(dataPlay['songs'], function(index, val) {
-                song = dataPlay['songs'][index];
-                $('<li><a class="gs-playsong" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>').appendTo('.gs-playlistall', this);
+              $.each(dataPlay['songs'], function(j, vj) {
+                song = dataPlay['songs'][j];
+                $('.gs-playlistall', i).append('<li>data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
+                // $(this).html('<li><a class="gs-playsong" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
               });
             }
           });

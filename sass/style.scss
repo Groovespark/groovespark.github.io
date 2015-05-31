@@ -6,6 +6,17 @@ $height-header: 10vh;
 $height-content: 80vh;
 $height-footer: 10vh;
 
+ /* Code for Firefox */
+::-moz-selection {
+    color: $white;
+    background: $brand;
+}
+
+::selection {
+    color: $white;
+    background: $brand;
+}
+
 body {
   header {
     height: $height-header;
