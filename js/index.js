@@ -1,4 +1,5 @@
 jsonpproxy = 'http://jsonp.afeld.me/?url=';
+githubproxy = 'http://github-raw-cors-proxy.herokuapp.com/';
 
 
 $(function() {
@@ -9,24 +10,24 @@ $(function() {
 
   // get playlist
   $("#gs-playsearch").click(function(e) {
-    gsplaylist = 'https://raw.githubusercontent.com/'+encodeURI($('.gs-username').val())+'/gs-playlists/master/';
+    gsplaylist = encodeURI($('.gs-username').val())+'/gs-playlists/master/';
     gsplaylistindex = gsplaylist + 'index.json';
     playlists.html('');
 
     $.ajax({
-      url: jsonpproxy + gsplaylistindex,  
+      url: githubproxy + gsplaylistindex,  
       dataType: 'jsonp',                                                                          
       success: function(data){      
-        $.each(data['playlists'], function(i, v) {
+        $.each(data['playlists'], function(i) {
           jsonplaylists = data['playlists'][i];
           playlistname = jsonplaylists['pathname'].replace('.json', '');
           playlists.append('<li><a href="#'+ playlistname +'">'+ playlistname + '</a><ul class="gs-playlistall">');
-          console.log(jsonpproxy + gsplaylist + decodeURI(jsonplaylists['pathname']));
+          console.log(githubproxy + gsplaylist + encodeURI(jsonplaylists['pathname']));
           $.ajax({
-            url: jsonpproxy + gsplaylist + decodeURI(jsonplaylists['pathname']),
+            url: githubproxy + gsplaylist + encodeURI(jsonplaylists['pathname']),
             dataType: 'jsonp',
             success: function(dataPlay){
-              $.each(dataPlay['songs'], function(j, vj) {
+              $.each(dataPlay['songs'], function(j) {
                 song = dataPlay['songs'][j];
                 $('.gs-playlistall', i).append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
                 // $(this).html('<li><a class="gs-playsong" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
