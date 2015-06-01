@@ -2,9 +2,9 @@
 @import "neat/neat";
 @import "variables.scss";
 
-$height-header: 10vh;
-$height-content: 80vh;
-$height-footer: 10vh;
+$height-header: 100px;
+$height-content: auto;
+$height-footer: 100px;
 
  /* Code for Firefox */
 ::-moz-selection {
@@ -24,71 +24,78 @@ body {
   
   .l-content {
     height: $height-content;
+    padding-bottom: $height-footer;
   }
 
-  header, .l-content, footer {
+  header, .l-content, .l-playercontainer {
     @include outer-container;
     .l-aside { @include span-columns(4); }
     .l-bside { @include span-columns(8); }
   }
 
   footer {
+    background-color: $gray;
+    position: fixed;
+    bottom: 0;
     height: $height-footer;
-    .l-aside {
-      @include outer-container;
-
-      .l-cover {
-        @include span-columns(6);
-        .img-cover {
-          height: $height-footer;
-          width: $height-footer;
-          background-size: cover;
-          margin: 0 auto;
-        }
-      }
-
-      .l-playercontrols {
-        @include span-columns(6);
-        text-align: center;
-        display: inline-block;
-
-        li {
-          display: inline;
-          font-size: 35px;
-          line-height: 10vh;
-        }
-      }
-    }
-    .l-bside {
-      height: $height-footer;
+    width: 100%;
+    .l-playercontainer {
+      margin: 0 auto;
       position: relative;
-      .gs-currentsong {
-        position: absolute;
-        text-align: center;
-        width: 100%;
+      .l-aside {
+        @include outer-container;
+        .l-cover {
+          @include span-columns(6);
+          .img-cover {
+            height: $height-footer;
+            width: $height-footer;
+            background-size: cover;
+            margin: 0 auto;
+          }
+        }
+        .l-playercontrols {
+          @include span-columns(6);
+          text-align: center;
+          display: inline-block;
+          margin: 0;
+          li {
+            display: inline;
+            font-size: 35px;
+            line-height: $height-footer;
+          }
+        }
       }
+      .l-bside {
+        height: $height-footer;
+        position: relative;
+        .gs-currentsong {
+          position: absolute;
+          text-align: center;
+          width: 100%;
+        }
 
-      .l-playerprogress {
-        margin-top: calc(5vh - 5px);
-        margin-bottom: calc(5vh - 5px);
-      
-        .progress-outer {
-          margin-top: 50%;
-          width: 80%;
-          height: 10px;
-          margin: 0 auto;
-          background-color: $gray;
-          .progress-inner {
+        .l-playerprogress {
+          margin-top: ($height-footer / 2) - 5px;
+          margin-bottom: ($height-footer / 2) - 5px;
+        
+          .progress-outer {
+            margin-top: 50%;
+            width: 80%;
             height: 10px;
-            background-color: $black-light;
-            width: 0%;
+            margin: 0 auto;
+            background-color: $gray-light;
+            .progress-inner {
+              height: 10px;
+              background-color: $black-light;
+              width: 0%;
+            }
           }
         }
       }
     }
   }
 
-  .l-container, .l-content {
+  .l-playercontainer, .l-container, .l-content {
     margin: 0 auto;
     width: 100%;
   }
@@ -96,5 +103,4 @@ body {
   .ex-playlist {
     display: none;
   }
-
 }
