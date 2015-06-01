@@ -11,84 +11,86 @@ html {
 /* Black */
 /* Gray */
 /* White */
-/* Code for Firefox */
-/* line 10, ../sass/style.scss */
+/* line 5, ../sass/style.scss */
 ::-moz-selection {
-  color: #f0f0f0;
+  color: #FFF;
+  background: #ff9800;
+}
+
+/* line 10, ../sass/style.scss */
+::selection {
+  color: #FFF;
   background: #ff9800;
 }
 
 /* line 15, ../sass/style.scss */
-::selection {
-  color: #f0f0f0;
-  background: #ff9800;
-}
-
-/* line 21, ../sass/style.scss */
-body header {
-  height: 100px;
-}
-/* line 25, ../sass/style.scss */
-body .l-content {
-  height: auto;
-  padding-bottom: 100px;
-}
-/* line 29, ../sass/style.scss */
-body .l-content .gs-playlist .gs-playlistall {
-  display: none;
-}
-/* line 32, ../sass/style.scss */
-body .l-content .gs-playlist .ex-playlist {
-  display: block;
-}
-/* line 38, ../sass/style.scss */
-body header, body .l-content, body .l-playercontainer {
-  max-width: 68em;
+body {
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 /* line 20, ../sass/bourbon/addons/_clearfix.scss */
-body header::after, body .l-content::after, body .l-playercontainer::after {
+body::after {
   clear: both;
   content: "";
   display: table;
 }
-/* line 40, ../sass/style.scss */
-body header .l-aside, body .l-content .l-aside, body .l-playercontainer .l-aside {
+/* line 18, ../sass/style.scss */
+body .l-sidebar {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 31.76157%;
+  width: 23.23176%;
+  position: absolute;
+  left: 0;
+  height: 100%;
 }
 /* line 89, ../sass/neat/grid/_span-columns.scss */
-body header .l-aside:last-child, body .l-content .l-aside:last-child, body .l-playercontainer .l-aside:last-child {
+body .l-sidebar:last-child {
   margin-right: 0;
+}
+/* line 25, ../sass/style.scss */
+body .l-content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background-color: #FFF;
+}
+/* line 89, ../sass/neat/grid/_span-columns.scss */
+body .l-content:last-child {
+  margin-right: 0;
+}
+/* line 32, ../sass/style.scss */
+body .l-content .gs-musicsearch {
+  width: 100%;
+  padding: 2%;
+  background-color: #ECF0F1;
+}
+/* line 37, ../sass/style.scss */
+body .l-content .gs-musicsearch input[type="text"] {
+  width: 94%;
 }
 /* line 41, ../sass/style.scss */
-body header .l-bside, body .l-content .l-bside, body .l-playercontainer .l-bside {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 65.88078%;
+body .l-content .gs-musicsearch input[type="submit"] {
+  width: 5%;
 }
-/* line 89, ../sass/neat/grid/_span-columns.scss */
-body header .l-bside:last-child, body .l-content .l-bside:last-child, body .l-playercontainer .l-bside:last-child {
-  margin-right: 0;
-}
-/* line 44, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 body footer {
   background-color: #777;
   position: fixed;
   bottom: 0;
-  height: 100px;
   width: 100%;
 }
-/* line 50, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 body footer .l-playercontainer {
   margin: 0 auto;
   position: relative;
 }
-/* line 53, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 body footer .l-playercontainer .l-aside {
   max-width: 68em;
   margin-left: auto;
@@ -100,7 +102,7 @@ body footer .l-playercontainer .l-aside::after {
   content: "";
   display: table;
 }
-/* line 55, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-cover {
   float: left;
   display: block;
@@ -111,14 +113,12 @@ body footer .l-playercontainer .l-aside .l-cover {
 body footer .l-playercontainer .l-aside .l-cover:last-child {
   margin-right: 0;
 }
-/* line 57, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-cover .img-cover {
-  height: 100px;
-  width: 100px;
   background-size: cover;
   margin: 0 auto;
 }
-/* line 64, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-playercontrols {
   float: left;
   display: block;
@@ -132,29 +132,22 @@ body footer .l-playercontainer .l-aside .l-playercontrols {
 body footer .l-playercontainer .l-aside .l-playercontrols:last-child {
   margin-right: 0;
 }
-/* line 69, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-playercontrols li {
   display: inline;
   font-size: 35px;
-  line-height: 100px;
 }
-/* line 76, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 body footer .l-playercontainer .l-bside {
-  height: 100px;
   position: relative;
 }
-/* line 79, ../sass/style.scss */
+/* line 93, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .gs-currentsong {
   position: absolute;
   text-align: center;
   width: 100%;
 }
-/* line 85, ../sass/style.scss */
-body footer .l-playercontainer .l-bside .l-playerprogress {
-  margin-top: 45px;
-  margin-bottom: 45px;
-}
-/* line 89, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer {
   margin-top: 50%;
   width: 80%;
@@ -162,7 +155,7 @@ body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer {
   margin: 0 auto;
   background-color: #9f9f9f;
 }
-/* line 95, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer .progress-inner {
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
@@ -171,12 +164,14 @@ body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer .progr
   background-color: #303030;
   width: 0%;
 }
-/* line 107, ../sass/style.scss */
-body .l-playercontainer, body .l-container, body .l-content {
-  margin: 0 auto;
-  width: 100%;
-}
-/* line 112, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 body .ex-playlist {
   display: none;
+}
+
+/* line 127, ../sass/style.scss */
+h1.logo {
+  font-family: 'Courgette', cursive;
+  color: #ff9800;
+  text-align: center;
 }

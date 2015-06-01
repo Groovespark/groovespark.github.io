@@ -5,45 +5,41 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://rawgit.com/Groovespark/Groofr/master/css/main.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-  <header>
-    <div class="l-aside">
+  <div class="l-sidebar">
+    <h1 class="logo">Groovespark</h1>
       <b>Playlists</b>
-      <form name="gs-playlistfetch" action="">
-        <input type="text" placeholder="Username e.g. KeizerDev" class="gs-username">
-        <input type="submit" value="Search" class="btn" id="gs-playsearch">
-      </form>
-    </div>
-    <div class="l-bside">
-      <b>Songs</b>
-      <form name="gs-musicsearch" action="">
-        <input type="text" placeholder="Song" class="gs-searchquery">
-        <input type="submit" value="Search" class="btn" id="gs-search">
-      </form> 
-    </div>
-  </header>
+      <!-- <form name="gs-playlistfetch" action=""> -->
+        <!-- <input type="text" placeholder="Username e.g. KeizerDev" class="gs-username"> -->
+        <!-- <input type="submit" value="Search" class="btn" id="gs-playsearch"> -->
+      <!-- </form> -->
+    </div>  
+  </div>
+ 
   <div class="l-content">
-    <div class="l-aside gs-results">
-      <ul class="gs-playlists">
-        <li>No playlists yet</li>
-      </ul>
-    </div>
-    <div class="l-bside gs-results">
+    <form class="gs-musicsearch" action="">
+      <input type="text" placeholder="Song" class="gs-searchquery">
+      <input type="submit" value="Search" class="btn" id="gs-search">
+    </form> 
+
+    <div class="gs-results">
       <ul class="gs-songs">
         <li>No songs yet</li>
       </ul>
     </div>
   </div>
+  <!-- 
   <footer>
     <div class="l-playercontainer">
       <div class="l-aside">
         <div class="l-cover">
-          <div class="img-cover"></div>        
+          <div class="img-cover"></div>
         </div>
         <ul class="l-playercontrols">
           <li><a href="#" class="player-previous">&#9194;</a></li>
@@ -58,6 +54,6 @@
         </div>
       </div>
     </div>
-  </footer>
+   --></footer>
 </body>
 </html>

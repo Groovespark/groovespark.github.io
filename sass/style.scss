@@ -2,11 +2,6 @@
 @import "neat/neat";
 @import "variables.scss";
 
-$height-header: 100px;
-$height-content: auto;
-$height-footer: 100px;
-
- /* Code for Firefox */
 ::-moz-selection {
     color: $white;
     background: $brand;
@@ -18,45 +13,61 @@ $height-footer: 100px;
 }
 
 body {
-  header {
-    height: $height-header;
+  @include outer-container(100%);
+  
+  .l-sidebar {
+    @include span-columns(3);
+    position: absolute;
+    left: 0;
+    height: 100%;
   }
   
   .l-content {
-    height: $height-content;
-    padding-bottom: $height-footer;
-    .gs-playlist {
-      .gs-playlistall {
-        display: none;
-      }
-      .ex-playlist {
-        display: block;
+    @include span-columns(9);
+    position: absolute;
+    right: 0;
+    height: 100%;
+    background-color: $white;
+
+    .gs-musicsearch {
+      width: 100%;
+      padding: 2%;
+      background-color: $white-dark;
+      
+      input[type="text"] {
+        width: 94%;
+      } 
+      
+      input[type="submit"] {
+        width: 5%;
       }
     }
   }
 
-  header, .l-content, .l-playercontainer {
-    @include outer-container;
-    .l-aside { @include span-columns(4); }
-    .l-bside { @include span-columns(8); }
-  }
+  // header, .l-content, .l-playercontainer {
+  //   @include outer-container;
+  //   .l-aside { @include span-columns(4); }
+  //   .l-bside { @include span-columns(8); }
+  // }
 
   footer {
     background-color: $gray;
     position: fixed;
     bottom: 0;
-    height: $height-footer;
     width: 100%;
+
     .l-playercontainer {
       margin: 0 auto;
       position: relative;
       .l-aside {
         @include outer-container;
+    
         .l-cover {
           @include span-columns(6);
+    
           .img-cover {
-            height: $height-footer;
-            width: $height-footer;
+            // height: $height-footer;
+            // width: $height-footer;
             background-size: cover;
             margin: 0 auto;
           }
@@ -66,16 +77,19 @@ body {
           text-align: center;
           display: inline-block;
           margin: 0;
+    
           li {
             display: inline;
             font-size: 35px;
-            line-height: $height-footer;
+            // line-height: $height-footer;
           }
         }
       }
+    
       .l-bside {
-        height: $height-footer;
+        // height: $height-footer;
         position: relative;
+    
         .gs-currentsong {
           position: absolute;
           text-align: center;
@@ -83,8 +97,8 @@ body {
         }
 
         .l-playerprogress {
-          margin-top: ($height-footer / 2) - 5px;
-          margin-bottom: ($height-footer / 2) - 5px;
+          // margin-top: ($height-footer / 2) - 5px;
+          // margin-bottom: ($height-footer / 2) - 5px;
         
           .progress-outer {
             margin-top: 50%;
@@ -92,6 +106,7 @@ body {
             height: 10px;
             margin: 0 auto;
             background-color: $gray-light;
+    
             .progress-inner {
               @include transition( all 0.8s );
               height: 10px;
@@ -104,12 +119,24 @@ body {
     }
   }
 
-  .l-playercontainer, .l-container, .l-content {
-    margin: 0 auto;
-    width: 100%;
-  }
-
   .ex-playlist {
     display: none;
   }
 }
+
+h1.logo {
+  font-family: 'Courgette', cursive;
+  color: $brand;
+  text-align: center;
+}
+
+
+    // .gs-playlist {
+    //   .gs-playlistall {
+    //     display: none;
+    //   }
+    
+    //   .ex-playlist {
+    //     display: block;
+    //   }
+    // }
