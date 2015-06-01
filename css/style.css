@@ -39,58 +39,80 @@ body::after {
 body .l-sidebar {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%;
-  position: absolute;
+  width: 25.58941%;
+  position: fixed;
   left: 0;
   height: 100%;
 }
-/* line 89, ../sass/neat/grid/_span-columns.scss */
+/* line 81, ../sass/neat/grid/_span-columns.scss */
 body .l-sidebar:last-child {
-  margin-right: 0;
+  width: 23.23176%;
 }
-/* line 25, ../sass/style.scss */
+/* line 24, ../sass/style.scss */
+body .l-sidebar .l-settings {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+/* line 28, ../sass/style.scss */
+body .l-sidebar .l-settings ul {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 32, ../sass/style.scss */
+body .l-sidebar .l-settings ul li {
+  list-style: none;
+  display: inline-block;
+  font-size: 1.4em;
+}
+/* line 36, ../sass/style.scss */
+body .l-sidebar .l-settings ul li:not(:last-child)::after {
+  content: "|";
+  color: #B3B3B3;
+  margin: 0 10px;
+}
+/* line 46, ../sass/style.scss */
 body .l-content {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 74.41059%;
+  width: 76.76824%;
   position: absolute;
   right: 0;
   height: 100%;
   background-color: #FFF;
 }
-/* line 89, ../sass/neat/grid/_span-columns.scss */
+/* line 81, ../sass/neat/grid/_span-columns.scss */
 body .l-content:last-child {
-  margin-right: 0;
+  width: 74.41059%;
 }
-/* line 32, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 body .l-content .gs-musicsearch {
   width: 100%;
   padding: 2%;
   background-color: #ECF0F1;
 }
-/* line 37, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 body .l-content .gs-musicsearch input[type="text"] {
   width: 94%;
 }
-/* line 41, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 body .l-content .gs-musicsearch input[type="submit"] {
   width: 5%;
 }
-/* line 53, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 body footer {
   background-color: #777;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
-/* line 59, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 body footer .l-playercontainer {
   margin: 0 auto;
   position: relative;
 }
-/* line 62, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 body footer .l-playercontainer .l-aside {
   max-width: 68em;
   margin-left: auto;
@@ -102,7 +124,7 @@ body footer .l-playercontainer .l-aside::after {
   content: "";
   display: table;
 }
-/* line 65, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-cover {
   float: left;
   display: block;
@@ -113,12 +135,12 @@ body footer .l-playercontainer .l-aside .l-cover {
 body footer .l-playercontainer .l-aside .l-cover:last-child {
   margin-right: 0;
 }
-/* line 68, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-cover .img-cover {
   background-size: cover;
   margin: 0 auto;
 }
-/* line 75, ../sass/style.scss */
+/* line 96, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-playercontrols {
   float: left;
   display: block;
@@ -132,22 +154,22 @@ body footer .l-playercontainer .l-aside .l-playercontrols {
 body footer .l-playercontainer .l-aside .l-playercontrols:last-child {
   margin-right: 0;
 }
-/* line 81, ../sass/style.scss */
+/* line 102, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-playercontrols li {
   display: inline;
   font-size: 35px;
 }
-/* line 89, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 body footer .l-playercontainer .l-bside {
   position: relative;
 }
-/* line 93, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .gs-currentsong {
   position: absolute;
   text-align: center;
   width: 100%;
 }
-/* line 103, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer {
   margin-top: 50%;
   width: 80%;
@@ -155,7 +177,7 @@ body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer {
   margin: 0 auto;
   background-color: #9f9f9f;
 }
-/* line 110, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer .progress-inner {
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
@@ -164,14 +186,17 @@ body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer .progr
   background-color: #303030;
   width: 0%;
 }
-/* line 122, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 body .ex-playlist {
   display: none;
 }
 
-/* line 127, ../sass/style.scss */
+/* line 148, ../sass/style.scss */
 h1.logo {
   font-family: 'Courgette', cursive;
-  color: #ff9800;
   text-align: center;
+  display: block;
+  line-height: 75px;
+  height: 100px;
+  width: 100%;
 }

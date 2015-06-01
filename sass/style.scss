@@ -16,14 +16,35 @@ body {
   @include outer-container(100%);
   
   .l-sidebar {
-    @include span-columns(3);
-    position: absolute;
+    @include span-columns(3 of 12, block-collapse);
+    position: fixed;
     left: 0;
     height: 100%;
+
+    .l-settings {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      ul {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        li {
+          list-style: none;
+          display: inline-block;
+          font-size: 1.4em;
+          &:not(:last-child)::after {
+            content: "|";
+            color: $white-darker;
+            margin: 0 10px;
+          }
+        }
+      }
+    }
   }
   
   .l-content {
-    @include span-columns(9);
+    @include span-columns(9 of 12, block-collapse);
     position: absolute;
     right: 0;
     height: 100%;
@@ -126,8 +147,11 @@ body {
 
 h1.logo {
   font-family: 'Courgette', cursive;
-  color: $brand;
   text-align: center;
+  display: block;
+  line-height: 75px;
+  height: 100px;
+  width: 100%;
 }
 
 
