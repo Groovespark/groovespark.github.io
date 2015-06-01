@@ -3,13 +3,13 @@ githubproxy = 'http://github-raw-cors-proxy.herokuapp.com/';
 
 
 $(function() {
-  var player = document.createElement("audio");
-  var playercover = $(".img-cover");
+  var player = document.createElement('audio');
+  var playercover = $('.img-cover');
   var playlists = $('.gs-playlists');
   var playing = false;
 
   // get playlist
-  $("#gs-playsearch").click(function(e) {
+  $('#gs-playsearch').click(function(e) {
     gsplaylist = encodeURI($('.gs-username').val())+'/gs-playlists/master/';
     gsplaylistindex = gsplaylist + 'index.json';
     playlists.html('');
@@ -43,7 +43,7 @@ $(function() {
   });
 
   // Search songs
-  $("#gs-search").click(function(e) {
+  $('#gs-search').click(function(e) {
     gssearch = 'http://pleer.com/browser-extension/search?q='+$('.gs-searchquery').val();
 
     $.ajax({
@@ -62,18 +62,18 @@ $(function() {
   });
 
   // Music player
-  $("body").on('click', '.gs-playsong', function(event) {
+  $('body').on('click', '.gs-playsong', function(event) {
     hash = $(this).data('songid');
     song = $(this).data('songname');
     artist = $(this).data('artistname');
-    player.src = "http://pleer.com/browser-extension/files/" + hash + ".mp3";
+    player.src = 'http://pleer.com/browser-extension/files/' + hash + '.mp3';
     player.play();
     getArtwork(artist + ' ' + song);
     $('.gs-currentsong').html(song + ' - ' + artist);
   });
 
   // Playlist expand
-  $("body").on('click', '.gs-playlist', function(event) {
+  $('body').on('click', '.gs-playlist', function(event) {
     var pl = $(this+".gs-playlistall");
     if (pl.hasClass('ex-playlist')) {
       pl.removeClass('ex-playlist');
@@ -98,21 +98,21 @@ $(function() {
   }
 
   player.addEventListener('playing',function() {
-    document.title = "▶ Groovespark";
-    $(".player-play").html("▮▮");
+    document.title = '▶ Groovespark';
+    $('.player-play').html('▮▮');
     playing = true;
   }); 
 
   player.addEventListener('pause',function() {
-    document.title = "װ Groovespark";
-    $(".player-play").html("‣");
+    document.title = 'װ Groovespark';
+    $('.player-play').html('‣');
     playing = false;
     player.currentTime;
-    $(".progress-inner").css('width', player.currentTime / player.duration * 100 + '%');
+    $('.progress-inner').css('width', player.currentTime / player.duration * 100 + '%');
   });
 
   player.addEventListener('timeupdate',function() {
-    $(".progress-inner").css('width', player.currentTime / player.duration * 100 + '%');
+    $('.progress-inner').css('width', player.currentTime / player.duration * 100 + '%');
   });
 
   $('.l-playercontrols').on('click', '.player-play', function(event) {
