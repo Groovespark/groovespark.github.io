@@ -21,7 +21,7 @@ $(function() {
         $.each(data['playlists'], function(i) {
           jsonplaylists = data['playlists'][i];
           playlistname = jsonplaylists['pathname'].replace('.json', '');
-          playlists.append('<li><a href="#'+ playlistname +'">'+ playlistname + '</a><ul class="gs-playlistall">');
+          playlists.append('<li class="gs-playlist"><a class="gs-playlistname" href="#'+ playlistname +'">'+ playlistname + '</a><ul class="gs-playlistall">');
           console.log(githubproxy + gsplaylist + encodeURI(jsonplaylists['pathname']));
           $.ajax({
             url: githubproxy + gsplaylist + encodeURI(jsonplaylists['pathname']),
@@ -73,8 +73,8 @@ $(function() {
   });
 
   // Playlist expand
-  $("body").on('click', '.gs-playlist', function(event) {
-    var pl = $(this+".gs-playlistall");
+  $(".gs-playlists").on('click', '.gs-playlistname', function(event) {
+    var pl = $(this).parent().find(".gs-playlistall");
     if (pl.hasClass('ex-playlist')) {
       pl.removeClass('ex-playlist');
     } else {

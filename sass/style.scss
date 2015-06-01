@@ -25,6 +25,14 @@ body {
   .l-content {
     height: $height-content;
     padding-bottom: $height-footer;
+    .gs-playlist {
+      .gs-playlistall {
+        display: none;
+      }
+      .ex-playlist {
+        display: block;
+      }
+    }
   }
 
   header, .l-content, .l-playercontainer {
@@ -85,6 +93,7 @@ body {
             margin: 0 auto;
             background-color: $gray-light;
             .progress-inner {
+              @include transition( all 0.8s );
               height: 10px;
               background-color: $black-light;
               width: 0%;

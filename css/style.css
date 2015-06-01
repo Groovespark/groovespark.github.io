@@ -33,7 +33,15 @@ body .l-content {
   height: auto;
   padding-bottom: 100px;
 }
-/* line 30, ../sass/style.scss */
+/* line 29, ../sass/style.scss */
+body .l-content .gs-playlist .gs-playlistall {
+  display: none;
+}
+/* line 32, ../sass/style.scss */
+body .l-content .gs-playlist .ex-playlist {
+  display: block;
+}
+/* line 38, ../sass/style.scss */
 body header, body .l-content, body .l-playercontainer {
   max-width: 68em;
   margin-left: auto;
@@ -45,7 +53,7 @@ body header::after, body .l-content::after, body .l-playercontainer::after {
   content: "";
   display: table;
 }
-/* line 32, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 body header .l-aside, body .l-content .l-aside, body .l-playercontainer .l-aside {
   float: left;
   display: block;
@@ -56,7 +64,7 @@ body header .l-aside, body .l-content .l-aside, body .l-playercontainer .l-aside
 body header .l-aside:last-child, body .l-content .l-aside:last-child, body .l-playercontainer .l-aside:last-child {
   margin-right: 0;
 }
-/* line 33, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 body header .l-bside, body .l-content .l-bside, body .l-playercontainer .l-bside {
   float: left;
   display: block;
@@ -67,7 +75,7 @@ body header .l-bside, body .l-content .l-bside, body .l-playercontainer .l-bside
 body header .l-bside:last-child, body .l-content .l-bside:last-child, body .l-playercontainer .l-bside:last-child {
   margin-right: 0;
 }
-/* line 36, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 body footer {
   background-color: #777;
   position: fixed;
@@ -75,12 +83,12 @@ body footer {
   height: 100px;
   width: 100%;
 }
-/* line 42, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 body footer .l-playercontainer {
   margin: 0 auto;
   position: relative;
 }
-/* line 45, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 body footer .l-playercontainer .l-aside {
   max-width: 68em;
   margin-left: auto;
@@ -92,7 +100,7 @@ body footer .l-playercontainer .l-aside::after {
   content: "";
   display: table;
 }
-/* line 47, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-cover {
   float: left;
   display: block;
@@ -103,14 +111,14 @@ body footer .l-playercontainer .l-aside .l-cover {
 body footer .l-playercontainer .l-aside .l-cover:last-child {
   margin-right: 0;
 }
-/* line 49, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-cover .img-cover {
   height: 100px;
   width: 100px;
   background-size: cover;
   margin: 0 auto;
 }
-/* line 56, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-playercontrols {
   float: left;
   display: block;
@@ -124,29 +132,29 @@ body footer .l-playercontainer .l-aside .l-playercontrols {
 body footer .l-playercontainer .l-aside .l-playercontrols:last-child {
   margin-right: 0;
 }
-/* line 61, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 body footer .l-playercontainer .l-aside .l-playercontrols li {
   display: inline;
   font-size: 35px;
   line-height: 100px;
 }
-/* line 68, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 body footer .l-playercontainer .l-bside {
   height: 100px;
   position: relative;
 }
-/* line 71, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .gs-currentsong {
   position: absolute;
   text-align: center;
   width: 100%;
 }
-/* line 77, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .l-playerprogress {
   margin-top: 45px;
   margin-bottom: 45px;
 }
-/* line 81, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer {
   margin-top: 50%;
   width: 80%;
@@ -154,18 +162,21 @@ body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer {
   margin: 0 auto;
   background-color: #9f9f9f;
 }
-/* line 87, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 body footer .l-playercontainer .l-bside .l-playerprogress .progress-outer .progress-inner {
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
   height: 10px;
   background-color: #303030;
   width: 0%;
 }
-/* line 98, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 body .l-playercontainer, body .l-container, body .l-content {
   margin: 0 auto;
   width: 100%;
 }
-/* line 103, ../sass/style.scss */
+/* line 112, ../sass/style.scss */
 body .ex-playlist {
   display: none;
 }
