@@ -32,7 +32,7 @@ $(function() {
               $.each(dataPlay['songs'], function(j) {
                 song = dataPlay['songs'][j];
 
-                $('.gs-playlistall').eq(i).append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
+                $('.gs-playlistall').eq(i).append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="javascript:void(0);">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
                 // $(this).html('<li><a class="gs-playsong" href="#'+ song['id']+'">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
               });
             }
@@ -114,24 +114,56 @@ $(function() {
   });
 });
 
-// Routes:
-Path.map("#/search").to(function () {
-  console.log('route');
+/*
+* Layout:
+*/
+function container(type) {
+  var container = $('.l-content');
+  switch (type) {
+    case 'home':
+      container.html('HOME');
+      break;
+    case 'search':
+      container.html('<form class="gs-musicsearch" action="">' +
+        '<input type="text" placeholder="Song" class="gs-searchquery">' +
+        '<input type="submit" value="Search" class="btn" id="gs-search">' +
+        '</form>' +
+        '<div class="gs-results">' +
+        '<ul class="gs-songs"></ul>' +
+        '</div>');
+      break;
+    default:
+      text = 'Looking forward to the Weekend';
+  } 
+}
+
+/*
+* Routes:
+*/
+Path.root('#/search');
+
+
+Path.map('#/playlist(/:name)').to(function() {
+  console.log(this.params['name']);
 });
 
-Path.map("#/search/:keywords").to(function(){
-    gssearch = 'http://pleer.com/browser-extension/search?q='+$('.gs-searchquery').val();
+Path.map('#/search(/:keywords)').to(function(){
+  container('search');
+  var keywords = this.params['keywords'] || '';
+  if (keywords == '') 
+    return;
 
-    $.ajax({
-      url: jsonpproxy + gssearch,  
-      dataType: 'jsonp',
-      success: function(data){
-        $('.gs-songs').html('');
-        console.log(data);
-        $.each(data['tracks'], function(index, val) {
-          song = data['tracks'][index];
-          $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
-        });
-      }
-    });
+  gssearch = 'http://pleer.com/browser-extension/search?q=' + keywords;
+  $.ajax({
+    url: jsonpproxy + gssearch,  
+    dataType: 'jsonp',
+    success: function(data){
+      $('.gs-songs').html('');
+      console.log(data);
+      $.each(data['tracks'], function(index, val) {
+        song = data['tracks'][index];
+        $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="javascript:void(0);">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
+      });
+    }
+  });
 });
