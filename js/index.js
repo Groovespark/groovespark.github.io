@@ -3,15 +3,16 @@ githubproxy = 'http://github-raw-cors-proxy.herokuapp.com/';
 
 
 
-  $.router.add("/items/:item", function(data) {
-    console.log(data.item);
-  });
+  
 $(function() {
   var player = document.createElement('audio');
   var playercover = $('.img-cover');
   var playlists = $('.gs-playlists');
   var playing = false;
 
+$.router.add("/items/:item", function(data) {
+    console.log(data.item);
+  });
   // get playlist
   $('#gs-playsearch').click(function(e) {
     gsplaylist = encodeURI($('.gs-username').val())+'/gs-playlists/master/';
