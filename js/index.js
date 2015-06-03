@@ -2,6 +2,10 @@ jsonpproxy = 'http://jsonp.afeld.me/?url=';
 githubproxy = 'http://github-raw-cors-proxy.herokuapp.com/';
 
 
+
+  $.router.add("/items/:item", function(data) {
+    console.log(data.item);
+  });
 $(function() {
   var player = document.createElement('audio');
   var playercover = $('.img-cover');
