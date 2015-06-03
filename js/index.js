@@ -162,6 +162,7 @@ Path.map('#/search(/:keywords)').to(function(){
   var keywords = this.params['keywords'] || '';
   if (keywords == '') 
     return;
+  $('.gs-searchquery').val(keywords);
 
   gssearch = 'http://pleer.com/browser-extension/search?q=' + keywords;
   $.ajax({
