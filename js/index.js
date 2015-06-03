@@ -132,6 +132,12 @@ function container(type) {
         '<ul class="gs-songs"></ul>' +
         '</div>');
       break;
+    case 'home':
+      container.html('HOME');
+      break;
+    case 'help':
+      container.html('help page');
+      break;
     default:
       text = 'Looking forward to the Weekend';
   } 
@@ -141,7 +147,6 @@ function container(type) {
 * Routes:
 */
 Path.root('#/search');
-
 
 Path.map('#/playlist(/:name)').to(function() {
   console.log(this.params['name']);
@@ -166,4 +171,8 @@ Path.map('#/search(/:keywords)').to(function(){
       });
     }
   });
+});
+
+Path.map('#/help').to(function() {
+  container('help')
 });
