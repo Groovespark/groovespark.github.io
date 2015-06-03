@@ -44,12 +44,6 @@ $(function() {
     e.preventDefault();
   });
 
-  // Search songs
-  $('#gs-search').click(function(e) {
-    document.location.hash = "/search/" + $('.gs-searchquery').val();
-    e.preventDefault();  
-  });
-
   // Music player
   $('body').on('click', '.gs-playsong', function(event) {
     hash = $(this).data('songid');
@@ -123,6 +117,7 @@ function container(type) {
     case 'home':
       container.html('HOME');
       break;
+    
     case 'search':
       container.html('<form class="gs-musicsearch" action="">' +
         '<input type="text" placeholder="Song" class="gs-searchquery">' +
@@ -131,13 +126,23 @@ function container(type) {
         '<div class="gs-results">' +
         '<ul class="gs-songs"></ul>' +
         '</div>');
+        
+      // Add listener
+      $('#gs-search').click(function(e) {
+        document.location.hash = "/search/" + $('.gs-searchquery').val();
+        e.preventDefault();  
+      });
+
       break;
+    
     case 'home':
       container.html('HOME');
       break;
+    
     case 'help':
       container.html('help page');
       break;
+    
     default:
       text = 'Looking forward to the Weekend';
   } 
