@@ -54,8 +54,8 @@ body {
     @include span-columns(9 of 12, block-collapse);
     position: absolute;
     right: 0;
-    height: 100%;
-    background-color: $white;
+    min-height: 100%;
+    background-color: $gray-light;
 
     .gs-musicsearch {
       width: 100%;
@@ -69,6 +69,23 @@ body {
       input[type="submit"] {
         width: 5%;
       }
+    }
+
+    .gs-results {
+    	li {
+    		list-style: none;
+
+    		a {
+    			@include span-columns(9 of 9);
+    			padding: 20px 30px;
+    			margin-bottom: 5px;
+    			background: $white;
+
+    			&:hover {
+    				background: $white-darker;
+    			}
+    		}
+    	}
     }
   }
 

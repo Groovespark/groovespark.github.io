@@ -59,8 +59,8 @@ body {
     width: 76.76824%;
     position: absolute;
     right: 0;
-    height: 100%;
-    background-color: #fafafa; }
+    min-height: 100%;
+    background-color: #bdbdbd; }
     body .l-content:last-child {
       width: 74.41059%; }
     body .l-content .gs-musicsearch {
@@ -71,6 +71,20 @@ body {
         width: 94%; }
       body .l-content .gs-musicsearch input[type="submit"] {
         width: 5%; }
+    body .l-content .gs-results li {
+      list-style: none; }
+      body .l-content .gs-results li a {
+        float: left;
+        display: block;
+        margin-right: 3.16844%;
+        width: 100%;
+        padding: 20px 30px;
+        margin-bottom: 5px;
+        background: #fafafa; }
+        body .l-content .gs-results li a:last-child {
+          margin-right: 0; }
+        body .l-content .gs-results li a:hover {
+          background: #eee; }
   body footer {
     background-color: #9e9e9e;
     position: fixed;
