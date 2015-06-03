@@ -2,17 +2,14 @@ jsonpproxy = 'http://jsonp.afeld.me/?url=';
 githubproxy = 'http://github-raw-cors-proxy.herokuapp.com/';
 
 
-
-  
 $(function() {
   var player = document.createElement('audio');
   var playercover = $('.img-cover');
   var playlists = $('.gs-playlists');
   var playing = false;
 
-$.router.add("/items/:item", function(data) {
-    console.log(data.item);
-  });
+  Path.listen();
+  
   // get playlist
   $('#gs-playsearch').click(function(e) {
     gsplaylist = encodeURI($('.gs-username').val())+'/gs-playlists/master/';
@@ -49,21 +46,8 @@ $.router.add("/items/:item", function(data) {
 
   // Search songs
   $('#gs-search').click(function(e) {
-    gssearch = 'http://pleer.com/browser-extension/search?q='+$('.gs-searchquery').val();
-
-    $.ajax({
-      url: jsonpproxy + gssearch,  
-      dataType: 'jsonp',
-      success: function(data){
-        $('.gs-songs').html('');
-        console.log(data);
-        $.each(data['tracks'], function(index, val) {
-          song = data['tracks'][index];
-          $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
-        });
-      }
-    });
-    e.preventDefault();
+    document.location.hash = "/search/" + $('.gs-searchquery').val();
+    e.preventDefault();  
   });
 
   // Music player
@@ -128,4 +112,26 @@ $.router.add("/items/:item", function(data) {
       player.play();
     }
   });
+});
+
+// Routes:
+Path.map("#/search").to(function () {
+  console.log('route');
+});
+
+Path.map("#/search/:keywords").to(function(){
+    gssearch = 'http://pleer.com/browser-extension/search?q='+$('.gs-searchquery').val();
+
+    $.ajax({
+      url: jsonpproxy + gssearch,  
+      dataType: 'jsonp',
+      success: function(data){
+        $('.gs-songs').html('');
+        console.log(data);
+        $.each(data['tracks'], function(index, val) {
+          song = data['tracks'][index];
+          $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="#">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
+        });
+      }
+    });
 });
