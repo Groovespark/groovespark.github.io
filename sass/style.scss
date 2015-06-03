@@ -20,6 +20,12 @@ body {
     position: fixed;
     left: 0;
     height: 100%;
+    background: $black-light;
+    color: $white-darker;
+
+    .logo {
+    	color: $brand-light;
+    }
 
     .l-settings {
       position: absolute;
@@ -33,6 +39,7 @@ body {
           list-style: none;
           display: inline-block;
           font-size: 1.4em;
+          color: $white-darker;
           &:not(:last-child)::after {
             content: "|";
             color: $white-darker;
