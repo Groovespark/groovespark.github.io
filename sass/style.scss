@@ -61,6 +61,7 @@ body {
       width: 100%;
       padding: 2%;
       background-color: $white-darkest;
+      //box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.38);
       
       input[type="text"] {
         width: 94%;
@@ -76,14 +77,23 @@ body {
     		list-style: none;
 
     		a {
-    			@include span-columns(9 of 9);
+    			@include span-columns(7 of 9);
+          @include shift(1);
     			padding: 20px 30px;
     			margin-bottom: 5px;
+          line-height: 1.1rem;
     			background: $white;
+          color: $gray-dark;
 
     			&:hover {
     				background: $white-darker;
     			}
+
+          .subtitle {
+            display: block;
+            color: $gray;
+            font-size: 0.9rem;
+          }
     		}
     	}
     }

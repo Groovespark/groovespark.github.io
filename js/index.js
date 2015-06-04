@@ -173,7 +173,7 @@ Path.map('#/search(/:keywords)').to(function(){
       console.log(data);
       $.each(data['tracks'], function(index, val) {
         song = data['tracks'][index];
-        $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="javascript:void(0);">' + song['track'] + ' - '+ song['artist'] +'</a></li>');
+        $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="javascript:void(0);">' + song['track'] + ' <span class="subtitle">'+ song['artist'] + '</span>' +'</a></li>');
       });
     }
   });
