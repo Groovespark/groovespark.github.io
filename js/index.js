@@ -1,6 +1,11 @@
 jsonpproxy = 'http://jsonp.afeld.me/?url=';
+musicServer = 'http://ting.hotchanson.com/'
 githubproxy = 'http://github-raw-cors-proxy.herokuapp.com/';
 
+// Api documentation 
+musicSearch   = 'v2/songs/search';   // ?q={query}
+musicAlbum    = 'v2/album/search';   // ?q={query}
+musicDownload = 'detail.do';     // ?neid={id}
 
 $(function() {
   var player = document.createElement('audio');
@@ -46,12 +51,22 @@ $(function() {
 
   // Music player
   $('body').on('click', '.gs-playsong', function(event) {
-    hash = $(this).data('songid');
+    id = $(this).data('songid');
     song = $(this).data('songname');
     artist = $(this).data('artistname');
-    player.src = 'http://pleer.com/browser-extension/files/' + hash + '.mp3';
-    player.play();
-    getArtwork(artist + ' ' + song);
+
+    $.ajax({
+      url: musicServer + musicDownload,   
+      dataType: 'jsonp',
+      data: 'neid=' + id,
+      success: function(data){
+        sourceList = data['data']['itemList'];
+        
+        player.src = sourceList[[sourceList.length-1]]['downUrl'];
+        player.play();
+      }
+    });
+    getArtwork(artist + ' ' + song); // We can use the api for this
     $('.gs-currentsong').html(song + ' - ' + artist);
   });
 
@@ -164,16 +179,16 @@ Path.map('#/search(/:keywords)').to(function(){
     return;
   $('.gs-searchquery').val(keywords);
 
-  gssearch = 'http://pleer.com/browser-extension/search?q=' + keywords;
   $.ajax({
-    url: jsonpproxy + gssearch,  
+    url: musicServer + musicSearch,  
     dataType: 'jsonp',
+    data: 'q='+ keywords,
     success: function(data){
       $('.gs-songs').html('');
       console.log(data);
-      $.each(data['tracks'], function(index, val) {
-        song = data['tracks'][index];
-        $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['id']+'" data-artistname="'+ song['artist'] +'" data-songname="' + song['track'] + '" href="javascript:void(0);">' + song['track'] + ' <span class="subtitle">'+ song['artist'] + '</span>' +'</a></li>');
+      $.each(data['data'], function(index, val) {
+        song = data['data'][index];
+        $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['song_id']+'" data-artistname="'+ song['singer_name'] +'" data-songname="' + song['song_name'] + '" href="javascript:void(0);">' + song['song_name'] + ' <span class="subtitle">'+ song['singer_name'] + '</span>' +'</a></li>');
       });
     }
   });
