@@ -207,7 +207,7 @@ Path.map('#/search(/:keywords)').to(function(){
   $.ajax({
     url: musicServer + musicSearchSong,  
     dataType: 'jsonp',
-    data: 'q='+ keywords,
+    data: 'q='+ keywords + '&size=24',
     success: function(data){
       console.log(data);
       $.each(data['data'], function(i) {
