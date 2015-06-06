@@ -3,9 +3,10 @@ musicServer = 'http://so.ard.iyyin.com/';
 githubproxy = 'http://github-raw-cors-proxy.herokuapp.com/';
 
 // Api documentation 
-musicSearchSong   = 'v2/songs/search';   // ?q={query}
-musicSearchAlbum  = 'v2/albums/search';   // ?q={query}
-musicDownload     = 'detail.do';     // ?neid={id}
+musicSearchSong   = 'v2/songs/search';      // ?q={query}
+musicSearchAlbum  = 'v2/albums/search';     // ?q={query}
+musicDownloadSong  = 'v2/songs/download';    // ?song_id={id} no jsonp
+musicDownload     = 'detail.do';            // ?neid={id}
 
 $(function() {
   var player = document.createElement('audio');
@@ -151,6 +152,11 @@ function container(type) {
 
       break;
     
+    case 'album':
+      container.html('<div class="gs-results"><ul class="gs-songs"></ul></div>');
+      break;
+    
+
     case 'home':
       container.html('HOME');
       break;
@@ -189,10 +195,10 @@ Path.map('#/search(/:keywords)').to(function(){
     data: 'q='+ keywords,
     success: function(data){
       console.log(data);
-      $.each(data['data'], function(index, val) {
-        song = data['data'][index];
+      $.each(data['data'], function(i) {
+        song = data['data'][i];
         console.log(data['data'])
-        $('.gs-albums').append('<li><a class="gs-album" href="javascript:void(0);"><img src="' + song['pic500'] + '"/>' + song['name'] +'</a></li>');
+        $('.gs-albums').append('<li><a class="gs-album" href="#/album/'+ song['song_ids'] +'"><img src="' + song['pic500'] + '"/>' + song['name'] +'</a></li>');
       });
     }
   });
@@ -204,8 +210,26 @@ Path.map('#/search(/:keywords)').to(function(){
     data: 'q='+ keywords,
     success: function(data){
       console.log(data);
-      $.each(data['data'], function(index, val) {
-        song = data['data'][index];
+      $.each(data['data'], function(i) {
+        song = data['data'][i];
+        $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['song_id']+'" data-artistname="'+ song['singer_name'] +'" data-songname="' + song['song_name'] + '" href="javascript:void(0);">' + song['song_name'] + ' <span class="subtitle">'+ song['singer_name'] + '</span>' +'</a></li>');
+      });
+    }
+  });
+});
+
+Path.map('#/album/:ids').to(function() {
+  container('album');
+  
+  var ids = this.params['ids'] || '';
+  $.ajax({
+    url: jsonpproxy + musicServer + musicDownloadSong + '?song_id=' + ids,  
+    dataType: 'jsonp',
+    success: function(data){
+      console.log(ids)
+      console.log(data)
+      $.each(data['data'], function(i) {
+        song = data['data'][i];
         $('.gs-songs').append('<li><a class="gs-playsong" data-songid="'+ song['song_id']+'" data-artistname="'+ song['singer_name'] +'" data-songname="' + song['song_name'] + '" href="javascript:void(0);">' + song['song_name'] + ' <span class="subtitle">'+ song['singer_name'] + '</span>' +'</a></li>');
       });
     }
@@ -213,5 +237,5 @@ Path.map('#/search(/:keywords)').to(function(){
 });
 
 Path.map('#/help').to(function() {
-  container('help')
+  container('help');
 });
