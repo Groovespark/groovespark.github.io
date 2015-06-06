@@ -104,6 +104,10 @@ body {
               background: $white-darker;
             }
 
+            &:focus {
+              background: $white-darkest;
+            }
+
             .subtitle {
               display: block;
               color: $gray;
