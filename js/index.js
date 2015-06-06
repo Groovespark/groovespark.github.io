@@ -198,7 +198,7 @@ Path.map('#/search(/:keywords)').to(function(){
       $.each(data['data'], function(i) {
         song = data['data'][i];
         console.log(data['data'])
-        $('.gs-albums').append('<li><a class="gs-album" href="#/album/'+ song['song_ids'] +'"><img src="' + song['pic500'] + '"/>' + song['name'] +'</a></li>');
+        $('.gs-albums').append('<li><a class="gs-album" href="#/album/'+ song['song_ids'] +'"><img src="' + song['pic200'] + '"/>' + song['name'] +'</a></li>');
       });
     }
   });
