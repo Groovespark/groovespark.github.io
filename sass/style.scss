@@ -73,109 +73,46 @@ body {
     }
 
     .gs-results {
-    	li {
-    		list-style: none;
+      .gs-albums {
+        width: 100%;
+        height: 40px;
 
-    		a {
-    			@include span-columns(7 of 9);
-          @include shift(1);
-    			padding: 20px 30px;
-    			margin-bottom: 5px;
-          line-height: 1.1rem;
-    			background: $white;
-          color: $gray-dark;
-
-    			&:hover {
-    				background: $white-darker;
-    			}
-
-          .subtitle {
-            display: block;
-            color: $gray;
-            font-size: 0.9rem;
-          }
-    		}
-    	}
-    }
-  }
-
-  // header, .l-content, .l-playercontainer {
-  //   @include outer-container;
-  //   .l-aside { @include span-columns(4); }
-  //   .l-bside { @include span-columns(8); }
-  // }
-
-  footer {
-    background-color: $gray;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
-    .l-playercontainer {
-      margin: 0 auto;
-      position: relative;
-      .l-aside {
-        @include outer-container;
-    
-        .l-cover {
-          @include span-columns(6);
-    
-          .img-cover {
-            // height: $height-footer;
-            // width: $height-footer;
-            background-size: cover;
-            margin: 0 auto;
-          }
-        }
-        .l-playercontrols {
-          @include span-columns(6);
-          text-align: center;
-          display: inline-block;
-          margin: 0;
-    
-          li {
-            display: inline;
-            font-size: 35px;
-            // line-height: $height-footer;
-          }
-        }
-      }
-    
-      .l-bside {
-        // height: $height-footer;
-        position: relative;
-    
-        .gs-currentsong {
-          position: absolute;
-          text-align: center;
-          width: 100%;
-        }
-
-        .l-playerprogress {
-          // margin-top: ($height-footer / 2) - 5px;
-          // margin-bottom: ($height-footer / 2) - 5px;
-        
-          .progress-outer {
-            margin-top: 50%;
-            width: 80%;
-            height: 10px;
-            margin: 0 auto;
-            background-color: $gray-light;
-    
-            .progress-inner {
-              @include transition( all 0.8s );
-              height: 10px;
-              background-color: $black-light;
-              width: 0%;
+        li {
+          @include span-columns(1 of 6, block-collapse);
+          .gs-album {
+            img {
+              width: 100%;          
             }
           }
         }
       }
-    }
-  }
 
-  .ex-playlist {
-    display: none;
+      .gs-songs {
+        li {
+          list-style: none;
+
+          a {
+            @include span-columns(7 of 9);
+            @include shift(1);
+            padding: 20px 30px;
+            margin-bottom: 5px;
+            line-height: 1.1rem;
+            background: $white;
+            color: $gray-dark;
+
+            &:hover {
+              background: $white-darker;
+            }
+
+            .subtitle {
+              display: block;
+              color: $gray;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }  
+    } 
   }
 }
 
@@ -187,6 +124,87 @@ h1.logo {
   height: 100px;
   width: 100%;
 }
+
+
+
+  // header, .l-content, .l-playercontainer {
+  //   @include outer-container;
+  //   .l-aside { @include span-columns(4); }
+  //   .l-bside { @include span-columns(8); }
+  // }
+
+//   footer {
+//     background-color: $gray;
+//     position: fixed;
+//     bottom: 0;
+//     width: 100%;
+
+//     .l-playercontainer {
+//       margin: 0 auto;
+//       position: relative;
+//       .l-aside {
+//         @include outer-container;
+    
+//         .l-cover {
+//           @include span-columns(6);
+    
+//           .img-cover {
+//             // height: $height-footer;
+//             // width: $height-footer;
+//             background-size: cover;
+//             margin: 0 auto;
+//           }
+//         }
+//         .l-playercontrols {
+//           @include span-columns(6);
+//           text-align: center;
+//           display: inline-block;
+//           margin: 0;
+    
+//           li {
+//             display: inline;
+//             font-size: 35px;
+//             // line-height: $height-footer;
+//           }
+//         }
+//       }
+    
+//       .l-bside {
+//         // height: $height-footer;
+//         position: relative;
+    
+//         .gs-currentsong {
+//           position: absolute;
+//           text-align: center;
+//           width: 100%;
+//         }
+
+//         .l-playerprogress {
+//           // margin-top: ($height-footer / 2) - 5px;
+//           // margin-bottom: ($height-footer / 2) - 5px;
+        
+//           .progress-outer {
+//             margin-top: 50%;
+//             width: 80%;
+//             height: 10px;
+//             margin: 0 auto;
+//             background-color: $gray-light;
+    
+//             .progress-inner {
+//               @include transition( all 0.8s );
+//               height: 10px;
+//               background-color: $black-light;
+//               width: 0%;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   .ex-playlist {
+//     display: none;
+//   }
 
 
     // .gs-playlist {

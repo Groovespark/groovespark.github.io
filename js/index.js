@@ -1,11 +1,11 @@
 jsonpproxy = 'http://jsonp.afeld.me/?url=';
-musicServer = 'http://ting.hotchanson.com/'
+musicServer = 'http://so.ard.iyyin.com/';
 githubproxy = 'http://github-raw-cors-proxy.herokuapp.com/';
 
 // Api documentation 
-musicSearch   = 'v2/songs/search';   // ?q={query}
-musicAlbum    = 'v2/album/search';   // ?q={query}
-musicDownload = 'detail.do';     // ?neid={id}
+musicSearchSong   = 'v2/songs/search';   // ?q={query}
+musicSearchAlbum  = 'v2/albums/search';   // ?q={query}
+musicDownload     = 'detail.do';     // ?neid={id}
 
 $(function() {
   var player = document.createElement('audio');
@@ -139,6 +139,7 @@ function container(type) {
         '<input type="submit" value="Search" class="btn" id="gs-search">' +
         '</form>' +
         '<div class="gs-results">' +
+        '<ul class="gs-albums"></ul>' +
         '<ul class="gs-songs"></ul>' +
         '</div>');
         
@@ -179,12 +180,29 @@ Path.map('#/search(/:keywords)').to(function(){
     return;
   $('.gs-searchquery').val(keywords);
 
+  $('.gs-results').html('<ul class="gs-albums"></ul><ul class="gs-songs"></ul>');
+
+  // Album search
   $.ajax({
-    url: musicServer + musicSearch,  
+    url: musicServer + musicSearchAlbum,  
     dataType: 'jsonp',
     data: 'q='+ keywords,
     success: function(data){
-      $('.gs-songs').html('');
+      console.log(data);
+      $.each(data['data'], function(index, val) {
+        song = data['data'][index];
+        console.log(data['data'])
+        $('.gs-albums').append('<li><a class="gs-album" href="javascript:void(0);"><img src="' + song['pic500'] + '"/>' + song['name'] +'</a></li>');
+      });
+    }
+  });
+
+  // Music Search
+  $.ajax({
+    url: musicServer + musicSearchSong,  
+    dataType: 'jsonp',
+    data: 'q='+ keywords,
+    success: function(data){
       console.log(data);
       $.each(data['data'], function(index, val) {
         song = data['data'][index];
