@@ -118,7 +118,12 @@ body {
             }
 
             &:focus {
-              background: $white-darkest;
+              background: $brand;
+              color: $white;
+              .subtitle {
+              	color: $white;
+              	opacity: 0.5;
+              }
             }
 
             .subtitle {

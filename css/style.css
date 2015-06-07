@@ -121,7 +121,11 @@ body {
           body .l-content .gs-results .gs-songs li a:hover {
             background: #eee; }
           body .l-content .gs-results .gs-songs li a:focus {
-            background: #e0e0e0; }
+            background: #ff9800;
+            color: #fafafa; }
+            body .l-content .gs-results .gs-songs li a:focus .subtitle {
+              color: #fafafa;
+              opacity: 0.5; }
           body .l-content .gs-results .gs-songs li a .subtitle {
             display: block;
             color: #9e9e9e;
