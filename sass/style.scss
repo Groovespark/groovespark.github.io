@@ -117,19 +117,24 @@ body {
               background: $white-darker;
             }
 
-            &:focus {
-              background: $brand;
-              color: $white;
-              .subtitle {
-              	color: $white;
-              	opacity: 0.5;
-              }
-            }
-
             .subtitle {
               display: block;
               color: $gray;
               font-size: 0.9rem;
+            }
+          }
+
+          .current-song {
+            background: $brand;
+            color: $white;
+
+            &:hover {
+              background: $brand;
+            }
+
+            .subtitle {
+              color: $white;
+              opacity: 0.5;
             }
           }
         }

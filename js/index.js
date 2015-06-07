@@ -13,6 +13,7 @@ $(function() {
   var playercover = $('.img-cover');
   var playlists = $('.gs-playlists');
   var playing = false;
+  var currentSong = null;
 
   Path.listen();
   
@@ -55,6 +56,16 @@ $(function() {
     id = $(this).data('songid');
     song = $(this).data('songname');
     artist = $(this).data('artistname');
+
+    // Reset style of the previous playing song
+    if (currentSong !== null) {
+      currentSong.removeClass('current-song');
+    }
+
+    currentSong = $(this);
+
+    // .current-song has unique styling in the css so it will stand out which song is currently playing
+    currentSong.addClass('current-song');
 
     $.ajax({
       url: musicServer + musicDownload,   
