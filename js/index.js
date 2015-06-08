@@ -114,7 +114,7 @@ $(function() {
   }); 
 
   player.addEventListener('pause',function() {
-    document.title = 'װ Groovespark';
+    document.title = 'Groovespark';
     $('.player-play').html('‣');
     playing = false;
     player.currentTime;
